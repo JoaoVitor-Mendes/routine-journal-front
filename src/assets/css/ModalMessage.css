@@ -1,0 +1,32 @@
+.modal-buttons {
+    display: block;
+    justify-content: center;
+    margin-top: 20px;
+  }
+  
+  .modal-confirm-btn {
+    background-color: green;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  .modal-confirm-btn:hover {
+    background-color: #ffff;
+  }
+  
+  .modal-cancel-btn {
+    background-color: #ff1a1a;
+    color: #ffff;
+    border: none;
+    align-items: end;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  .modal-cancel-btn:hover {
+    background-color: #bbb;
+  }

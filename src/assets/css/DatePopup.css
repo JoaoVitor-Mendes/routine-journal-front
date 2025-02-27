@@ -1,0 +1,91 @@
+.popup-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.popup-content {
+  background: var(--white);
+  padding: 30px;
+  border-radius: 10px;
+  box-shadow: var(--box-shadow);
+  width: 90%;
+  max-width: 500px;
+  text-align: center;
+}
+
+.popup-content h1 {
+  font-size: 2rem;
+  color: var(--primary-color);
+  margin-bottom: 20px;
+  font-weight: bold;
+}
+
+.popup-content input[type="date"] {
+  padding: 10px;
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+  font-size: var(--font-size);
+  margin-bottom: 20px;
+  width: calc(100% - 22px);
+}
+
+.popup-content .button-container {
+  display: flex;
+  justify-content: space-between;
+  width: calc(100% - 22px);
+  margin: 0 auto;
+}
+
+.popup-content .submit-btn {
+  background-color: var(--primary-color);
+  color: var(--white);
+  border: none;
+  border-radius: 8px;
+  padding: 12px 20px;
+  cursor: pointer;
+  font-size: var(--font-size);
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
+  margin-top: 10px;
+  width: 45%;
+}
+
+.popup-content .submit-btn:hover {
+  background-color: #004c99;
+  box-shadow: var(--box-shadow);
+}
+
+.popup-content .close-btn {
+  background-color: #ff4d4d;
+  color: var(--white);
+  border: none;
+  border-radius: 8px;
+  padding: 12px 20px;
+  cursor: pointer;
+  font-size: var(--font-size);
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
+  margin-top: 10px;
+  width: 45%;
+}
+
+.popup-content .close-btn:hover {
+  background-color: #cc0000;
+  box-shadow: var(--box-shadow);
+}
+
+.link {
+  color: var(--primary-color); 
+  cursor: pointer;
+  text-decoration: underline;
+}
+
+.link:hover {
+  color: #004c99;
+}
