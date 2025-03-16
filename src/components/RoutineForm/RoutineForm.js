@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
-import DatePopup from './DatePopup';
-import '../assets/css/RoutineForm.css';
+import DatePopup from '../DatePopup/DatePopup';
+import '../RoutineForm/RoutineForm';
 
 const RoutineForm = ({ routine, onSubmit, isViewMode }) => {
   const [routineText, setRoutineText] = useState(routine ? routine.description : '');
@@ -40,7 +40,7 @@ const RoutineForm = ({ routine, onSubmit, isViewMode }) => {
         value={routineText}
         onChange={(e) => setRoutineText(e.target.value)}
         placeholder="Escreva sua rotina aqui..."
-        readOnly={isViewMode} // Bloqueia edição se for modo de visualização
+        readOnly={isViewMode}
       />
 
       {!isViewMode && (

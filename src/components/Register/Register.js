@@ -1,8 +1,8 @@
-import '../assets/css/Register.css';
+import './Register.css';
 import React, { useState } from 'react';
 import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
-import Alert from './Alert';
+import Alert from '../Alert/Alert';
 
 const Register = () => {
   const [username, setUsuario] = useState('');

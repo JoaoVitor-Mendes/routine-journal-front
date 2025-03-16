@@ -1,11 +1,9 @@
-body {
-  font-family: Arial, sans-serif;
-  background-color: white ;
+.login-parent-container {
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 100%;
-  margin: 0;
+  min-height: 100vh;
+  background-color: #f4f4f4;
 }
 
 .login-container {
@@ -16,13 +14,13 @@ body {
   border-radius: 8px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   background-color: #fff;
+  align-items: center;
 }
 
 .login-logo {
-  max-width: 200px;
+  max-width: 300px;
   margin-bottom: 20px;
   height: auto;
-  margin-left: 40px;
 }
 
 .login-container h2 {
@@ -34,7 +32,7 @@ body {
 .login-container form {
   display: flex;
   flex-direction: column;
-  align-items: stretch;
+  align-items: stretch; 
 }
 
 .login-container .form-group {
@@ -69,8 +67,7 @@ body {
   border-radius: 4px;
   cursor: pointer;
   font-size: 16px;
-  transition: background-color 0.3s;
-  width: 100%;
+  width: 106%;
 }
 
 .login-container button:hover {

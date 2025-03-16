@@ -1,0 +1,38 @@
+.home-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  overflow: auto;
+  margin-top: 100px;
+}
+
+.home-container > div {
+  max-width: 600px;
+  width: 100%;
+  padding: 40px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  background-color: #fff;
+}
+
+header h1 {
+  font-size: 2.4rem;
+  margin-bottom: 10px;
+  text-align: center;
+}
+
+header p {
+  font-size: 1.4rem;
+  color: #333;
+  text-align: center;
+}
+
+p {
+  font-size: 1.2rem;
+  color: #555;
+  margin-bottom: 20px;
+  text-align: center;
+}
+  

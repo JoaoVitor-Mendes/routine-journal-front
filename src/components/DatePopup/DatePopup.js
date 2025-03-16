@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
-import '../assets/css/DatePopup.css';
+import './DatePopup.css';
+import Button from 'react-bootstrap/Button';
 
 const DatePopup = ({ setShowPopup, setSelectedDate }) => {
   const [date, setDate] = useState('');
@@ -19,13 +20,13 @@ const DatePopup = ({ setShowPopup, setSelectedDate }) => {
           onChange={(e) => setDate(e.target.value)}
           required
         />
-        <div className="button-container">
-          <button type="button" className="submit-btn" onClick={handleDateSelect}>
-            Confirmar Data
-          </button>
-          <button type="button" className="close-btn" onClick={() => setShowPopup(false)}>
+        <div className="d-grid gap-2">
+          <Button variant="success" size="lg" onClick={handleDateSelect}>
+            Confirmar
+          </Button>
+          <Button variant="danger" size="lg" onClick={() => setShowPopup(false)}>
             Fechar
-          </button>
+          </Button>
         </div>
       </div>
     </div>

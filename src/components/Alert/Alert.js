@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import './../assets/css/Alert.css';
+import './Alert.css';
 
 const Alert = ({ message, type }) => {
   return (

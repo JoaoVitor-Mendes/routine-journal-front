@@ -1,9 +1,16 @@
+import './Home.css'
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
-import '../assets/css/Home.css';
-import DatePopup from '../components/DatePopup';
-import Alert from './Alert';
+import DatePopup from '../DatePopup/DatePopup';
+import Alert from '../Alert/Alert';
+import Header from '../Header/Header';
+import Button from 'react-bootstrap/Button';
+import Container from 'react-bootstrap/Container';
+import Row from 'react-bootstrap/Row';
+import Col from 'react-bootstrap/Col';
+import FloatingLabel from 'react-bootstrap/FloatingLabel';
+import Form from 'react-bootstrap/Form';
 
 const Home = () => {
   const [routineText, setRoutineText] = useState('');
@@ -85,51 +92,56 @@ const Home = () => {
     }
   };
 
-  const handleListRoutines = () => {
-    navigate('/list-routines');
-  };
-
-  const handleLogout = () => {
-    localStorage.removeItem('token');
-    localStorage.removeItem('userId');
-    localStorage.removeItem('username');
-    navigate('/login');
-  };
-
   return (
-    <div className="body-home">
-      <div className="home-container">
-            <header>
-              <h1>Bem-vindo, {username}!</h1>
-              <p>{`Hoje é ${selectedDate ? formatDateToBrazilian(selectedDate) : currentDate}`}</p>
-            </header>
-
-            <p>Qual a sua rotina para hoje?</p>
-            
-            <p>Caso queira registrar em outra data, <a className="link" onClick={() => setShowPopup(true)}>clique aqui</a>.</p>
-
-            <textarea
-              value={routineText}
-              onChange={(e) => setRoutineText(e.target.value)}
-              placeholder="Escreva sua rotina aqui..."
-            />
-
-            <button className="submit-btn" onClick={handleSubmit}>
-              Cadastrar Rotina
-            </button>
-
-            <button className="list-btn" onClick={handleListRoutines}>
-              Listar Rotinas
-            </button>
-
-            <button className="logout-btn" onClick={handleLogout}>
-              Sair
-            </button>
-
-            {showPopup && <DatePopup setShowPopup={setShowPopup} setSelectedDate={setSelectedDate} />}
-            {message && <Alert message={message} type={messageType} />}
-          </div>
+    <><div>
+      <Header />
     </div>
+      <div className='home-container'>
+        <Container>
+          <Row>
+            <Col>
+              <header>
+                <h1>Bem-vindo, {username}!</h1>
+                <p>{`Hoje é ${selectedDate ? formatDateToBrazilian(selectedDate) : currentDate}`}</p>
+              </header>
+
+              <p>Qual a sua rotina para hoje?</p>
+
+              <p>
+                Caso queira registrar em outra data,{" "}
+                <a
+                  onClick={() => setShowPopup(true)}
+                  style={{ fontWeight: "bold", cursor: "pointer" }}
+                >
+                  clique aqui
+                </a>.
+              </p>
+              
+              <FloatingLabel controlId="floatingTextarea2" label="Escreva sua rotina aqui...">
+                <Form.Control
+                  as="textarea"
+                  placeholder="Escreva sua rotina aqui..."
+                  style={{ height: '200px', padding: '50px', marginBottom: '10px' }}
+                  value={routineText}
+                  onChange={(e) => setRoutineText(e.target.value)}
+                />
+              </FloatingLabel>
+
+              <div className="d-grid gap-2">
+                <Button variant="success" size="lg" onClick={handleSubmit}>
+                  Cadastrar Rotina
+                </Button>
+
+              </div>
+
+              {showPopup && <DatePopup setShowPopup={setShowPopup} setSelectedDate={setSelectedDate} />}
+              {message && <Alert message={message} type={messageType} />}
+
+            </Col>
+          </Row>
+        </Container>
+      </div>
+    </>
   );
 };
 
